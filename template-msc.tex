@@ -1,0 +1,226 @@
+%% Template para dissertacao/tese na classe UFBAthesis
+%% versao 1.0
+%% (c) 2005 Paulo G. S. Fonseca
+%% (c) 2012 Antonio Terceiro
+%% (c) 2014 Christina von Flach
+%% www.dcc.ufba.br/~flach/ufbathesis
+
+%% Carrega a classe ufbathesis
+%% Opcoes: * Idiomas
+%%           pt   - portugues (padrao)
+%%           en   - ingles
+%%         * Tipo do Texto
+%%           bsc  - para monografias de graduacao
+%%           msc  - para dissertacoes de mestrado (padrao)
+%%           qual - exame de qualificacao de mestrado
+%%           prop - exame de qualificacao de doutorado
+%%           phd  - para teses de doutorado
+%%         * Media
+%%           scr  - para versao eletronica (PDF) / consulte o guia do usuario
+%%         * Estilo
+%%           classic - estilo original a la TAOCP (deprecated) - apesar de deprecated, manter esse.
+%%           std     - novo estilo a la CUP (padrao)
+%%         * Paginacao
+%%           oneside - para impressao em face unica
+%%           twoside - para impressao em frente e verso (padrao)
+
+% Atenção: Manter 'classic' na declaracao abaixo:
+\documentclass[bsc, classic, a4paper]{ufbathesis}
+
+%% Preambulo:
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{hyphenat}
+\usepackage[usenames, dvipsnames, table]{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{multirow}
+\usepackage{listings} 
+\usepackage{colortbl}
+\usepackage{xfrac}
+\usepackage[FIGTOPCAP]{subfigure}
+\usepackage[printonlyused, withpage]{acronym}
+\usepackage{soul}
+\usepackage{enumitem}
+
+
+% Universidade
+\university{Universidade Tereza D’Ávila (UNIFATEA - SP)}
+
+% Endereco (cidade)
+\address{Aracaju}
+
+% Instituto ou Centro Academico
+\institute{Health Institute  Brazil}
+
+% Nome da biblioteca - usado na ficha catalografica
+\library{Biblioteca Reitor Mac\^{e}do Costa}
+
+% Programa de pos-graduacao
+\program{P\'{o}s-Gradua\c{c}\~{a}o em Nutrição Materno-Infantil}
+
+% Area de titulacao
+\majorfield{Nutrição Materno Infantil}
+
+% Titulo da dissertacao
+\title{Perfil clínico e nutricional de gestantes de alto risco atendidas em ambulatório de nutrição materno infantil referência no município de Aracaju/SE}
+
+% Data da defesa
+% e.g. \date{19 de fevereiro de 2013}
+\date{Setembro de 2019}
+% e.g. \defenseyear{2013}
+\defenseyear{2019}
+
+% Autor
+% e.g. \author{Jose da Silva}
+\author{Rafaella Cristina Santos da Silva}
+
+% Orientador(a)
+% Opcao: [f] - para orientador do sexo feminino
+% e.g. \adviser[f]{Profa. Dra. Maria Santos}
+\adviser[f]{Bruna Nabuco Freire Siqueira}
+
+%% Inicio do documento
+\begin{document}
+
+\pgcompfrontpage
+
+%% Parte pre-textual
+\frontmatter
+
+\pgcomppresentationpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ficha catalografica
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\authorcitationname{Sobrenome, Nome do ALUNO (usado em CITACOES)} % e.g. Terceiro, Antonio Soares de Azevedo
+\advisercitationname{Sobrenome, Nome do ORIENTADOR} % e.g. Chavez, 
+
+\coadvisercitationname{Sobrenome, Nome do CO-ORIENTADOR} % e.g. 
+
+\catalogtype{Trabalho de conclusão de curso)} % e.g. ou ``Tese (Doutorado)''
+
+\catalogtopics{1. Primeira palavra-chave. 2. Segunda palavra-chave. 3. Terceira palavra-chave} % Listar palavras-chave do trabalho para a FICHA CATALOGRAFICA}, por exemplo, ``1. Complexidade Estrutural. 2. Qualidade de Software 3. Engenharia de Software''
+\catalogcdd{XXX.XX} % e.g.  XXX.XX (número nesse formato serah dado pela biblioteca)
+\catalogcdu{XXX.XX.XXX} % e.g.  XXX.XX.XXX (idem) 
+\catalogingsheet
+
+%%%%%%%%%%%%%%%%%%%%%
+% Termo de aprovacaoo
+%%%%%%%%%%%%%%%%%%%%%
+
+\approvalsheet{Aracaju, DIA de MES de ANO}{
+   \comittemember{Profa. Dra. Professora 1}{Universidade XYZ}
+   \comittemember{Prof. Dr. Professor 2}{Universidade 123}
+   \comittemember{Profa. Dra. Professora 3}{Universidade ABC}
+   % Para mestrado, apenas 3.
+   % \comittemember{Prof. Dr. Professor 4}{Universidade HJKL}
+   % \comittemember{Profa. Dra. Professora 5}{Universidade QWERTY}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dedicatoria, Agradecimentos, Epigrafe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Comente para ocultar
+\begin{dedicatory}
+DIGITE A DEDICATORIA AQUI
+\end{dedicatory}
+
+% Agradecimentos
+% Se preferir, crie um arquivo `a parte e o inclua via \include{}
+\acknowledgements
+DIGITE OS AGRADECIMENTOS AQUI
+
+% Epigrafe
+\begin{epigraph}[NOTA]{AUTOR}
+DIGITE AQUI A CITACAO
+\end{epigraph}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Resumo em Portugues
+%%%%%%%%%%%%%%%%%%%%%
+
+\resumo
+COLOQUE O RESUMO. Se preferir, crie um arquivo separado e o inclua via comando include.
+
+Para evitar problemas de formato neste template (de uso geral), usamos acentua\c{c}\~{a}o mostrada abaixo. 
+
+\begin{verbatim} 
+\c{c} \~{a} \'{a} \^{e} \'{\i}
+\end{verbatim} 
+
+N\~{a}o precisa fazer dessa forma, caso use pacotes adequados (latin1, etc.).
+
+% Palavras-chave do resumo em Portugues
+\begin{keywords}
+PALAVRAS-CHAVE.
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%
+% Resumo em Ingles
+%%%%%%%%%%%%%%%%%%%
+
+\abstract
+COLOQUE O RESUMO EM INGL\^{E}S. Se preferir, crie um arquivo separado e o inclua via comando include.
+% Palavras-chave do resumo em Ingles
+\begin{keywords}
+PALAVRAS-CHAVE EM INGL\^{E}S.
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%
+% Sumario / Indice
+%%%%%%%%%%%%%%%%%%%
+
+% Comente para ocultar
+\tableofcontents
+
+% Lista de figuras
+% Comente para ocultar
+\listoffigures
+
+% Lista de tabelas
+% Comente para ocultar
+\listoftables
+
+
+\chapter*{Lista de Siglas}
+
+% Sintaxe da lista de acordo com a documentação do pacote `acronym'
+% documentação: http://mirror.unl.edu/ctan/macros/latex/contrib/acronym/acronym.pdf
+\begin{acronym}[PPGCNUT]
+    \acro{PPGCNUT}{Programa de Pós-Graduação em Ciências da Nutrição}
+    \acro{GAR}{Gestação de Alto Risco}
+    \acro{OPAS}{Organização Pan-Americana da Saúde}
+    \acro{IMC}{Índice de Massa Corporal}
+    \acro{WHO}{World Health Organization}
+    \acro{MTGAR}{Manual Técnico de Gestação de Alto Risco}
+    \acro{MS}{Ministério da Saúde}
+    \acro{PPG}{Peso Pré-gestacional}
+    \acro{CDC}{Centers for Disease Control and Prevention}
+    \acro{OMS}{Organização Mundial da Saúde}
+    \acro{RMM}{Razão de Mortalidade Materna}
+    \acro{ONU}{Organização das Nações Unidas}
+    \acro{GIG}{Gigante para a Idade Gestacional}
+    \acro{PIG}{Pequeno para a Idade Gestacional}
+
+\end{acronym}
+
+%% Parte textual
+\mainmatter
+
+\include{capitulos/introducao}
+\include{capitulos/referencial-teorico}
+\include{capitulos/procedimentos_metodologicos}
+\include{capitulos/resultados}
+\include{capitulos/discussao}
+\include{capitulos/conclusao}
+
+
+\bibliographystyle{abntex2-alf}
+\bibliography{biblio}
+
+\end{document}
+%------------------------------------------------------------------------------------------%
